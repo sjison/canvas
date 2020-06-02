@@ -11,12 +11,12 @@ RUN     apt-get install --yes software-properties-common python-software-propert
 RUN add-apt-repository ppa:brightbox/ruby-ng && \
     apt-get -y update
 
-# RUN apt-get install \
-#          software-properties-common git-core ruby2.4 ruby2.4-dev \
-#          zlib1g-dev libxml2-dev libsqlite3-dev postgresql libpq-dev \
-#          libxmlsec1-dev curl make g++
+RUN apt-get install \
+         git-core ruby2.4 ruby2.4-dev \
+         zlib1g-dev libxml2-dev libsqlite3-dev postgresql libpq-dev \
+         libxmlsec1-dev curl make g++
 
-# RUN apt-get install postgresql-9.5
+RUN apt-get install postgresql-9.5
   
 
 # RUN gem install bundler --version 1.13.7
