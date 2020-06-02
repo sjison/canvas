@@ -32,10 +32,10 @@ RUN add-apt-repository ppa:chris-lea/redis-server && \
 RUN apt-get install -y redis-server
 
 
-# # get canvas and install
-# RUN     cd /var && git clone https://github.com/instructure/canvas-lms.git canvas
-# WORKDIR /var/canvas
-# RUN     git checkout stable
+# get canvas and install
+RUN     cd /var && git clone https://github.com/instructure/canvas-lms.git canvas
+WORKDIR /var/canvas
+RUN     git checkout stable
 
-# RUN bundle _1.13.7_ install --path vendor/bundle
-# RUN yarn install
+RUN bundle _1.13.7_ install --path vendor/bundle
+RUN yarn install
