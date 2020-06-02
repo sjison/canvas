@@ -7,9 +7,9 @@ RUN     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B
 RUN     apt-get install --yes software-properties-common python-software-properties \
                               curl apt-transport-https ca-certificates
 
-# # ruby repo
-# RUN add-apt-repository ppa:brightbox/ruby-ng && \
-#     apt-get -y update
+# ruby repo
+RUN add-apt-repository ppa:brightbox/ruby-ng && \
+    apt-get -y update
 
 # RUN apt-get install \
 #          software-properties-common git-core ruby2.4 ruby2.4-dev \
