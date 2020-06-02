@@ -14,29 +14,29 @@ RUN apt-get install -y postgresql-9.5
 
 RUN gem install bundler --version 1.13.7
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | -E bash - && \
-    apt-get install nodejs      
+RUN curl -sL https://deb.nodesource.com/setup_10.x | -E bash - 
+RUN apt-get install nodejs      
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && sudo apt-get install yarn=1.10.1-1
+# RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+#     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+#     apt-get update && sudo apt-get install yarn=1.10.1-1
 
-RUN apt-get install -y python
+# RUN apt-get install -y python
 
 
-RUN apt-get install -y passenger libapache2-mod-passenger apache2
+# RUN apt-get install -y passenger libapache2-mod-passenger apache2
  
  
-RUN add-apt-repository ppa:chris-lea/redis-server && \
-    apt-get update
+# RUN add-apt-repository ppa:chris-lea/redis-server && \
+#     apt-get update
 
-RUN apt-get install -y redis-server
+# RUN apt-get install -y redis-server
 
 
-# get canvas and install
-RUN     cd /var && git clone https://github.com/instructure/canvas-lms.git canvas
-WORKDIR /var/canvas
-RUN     git checkout stable
+# # get canvas and install
+# RUN     cd /var && git clone https://github.com/instructure/canvas-lms.git canvas
+# WORKDIR /var/canvas
+# RUN     git checkout stable
 
 # RUN bundle _1.13.7_ install --path vendor/bundle
 # RUN yarn install
