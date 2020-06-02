@@ -3,6 +3,9 @@ FROM ubuntu:16.04
 RUN apt-get -y update &&  \
     apt-get -y upgrade 
  
+RUN apt-get install  software-properties-common && \
+    apt-get -y update
+
 # ruby repo
 RUN add-apt-repository ppa:brightbox/ruby-ng && \
     apt-get -y update
