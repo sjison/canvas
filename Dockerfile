@@ -1,23 +1,19 @@
 FROM ubuntu:16.04
-
-
+ 
 RUN apt-get -y update &&  \
     apt-get -y upgrade 
  
-RUN apt-get install \
-         software-properties-common git-core ruby2.4 ruby2.4-dev \
-         zlib1g-dev libxml2-dev libsqlite3-dev postgresql libpq-dev \
-         libxmlsec1-dev curl make g++
-
-RUN apt-get install postgresql-9.5
-
+# ruby repo
 RUN add-apt-repository ppa:brightbox/ruby-ng && \
     apt-get -y update
 
 RUN apt-get install \
          software-properties-common git-core ruby2.4 ruby2.4-dev \
          zlib1g-dev libxml2-dev libsqlite3-dev postgresql libpq-dev \
-         libxmlsec1-dev curl make g++             
+         libxmlsec1-dev curl make g++
+
+RUN apt-get install postgresql-9.5
+  
 
 RUN gem install bundler --version 1.13.7
 
