@@ -1,6 +1,5 @@
 FROM ubuntu:16.04
 
-RUN apt-get install -y sudo
 
 RUN apt-get -y update &&  \
     apt-get -y upgrade 
